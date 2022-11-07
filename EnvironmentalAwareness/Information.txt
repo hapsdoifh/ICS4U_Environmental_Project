@@ -1,0 +1,35 @@
+Intro1:
+Smart technologies are useful. Nobody can deny that they are essential parts of our lives today. These technologies help us with everything we do, from speeding up daily routines to taking the burden off our shoulders in normally time-consuming and difficult tasks. Most people today benefit from technology without even noticing. However, it’s exactly due to the seamless integration with our lives that we often stay ignorant about the important yet unseen aspects of using technology, with notable ones being the effects on our health and the environment
+Intro2:
+This program will briefly walk through some important impacts of technology that we need to pay attention to, some problems technologies bring, and some solutions on how we can fix them. 
+Benefit1:
+Computers help improve our general health in several ways. Today, a lot of medical research is done with the help of computing technology. For example, the recently developed alpha fold AI model can accurately predict protein shapes and was used to predict the COVID-19 viral protein to help find effective treatments.
+Benefit2:
+Computers also have a positive effect on mental health, the internet and social media have allowed people to connect through the pandemic and support each other through difficult times
+Benefit3:
+Computers, when combined with other technologies such as robotics, can help humans avoid dangerous situations. For example, the robot dog from Boston Dynamic can navigate dangerous places and can identify hazardous materials by itself. 
+Benefit4:
+Computers can also help protect the environment in some ways. For example, they can be used to calculate and predict the locations of plastic piles in the ocean. Most of the plastic floating in the ocean exists below the surface and cannot be detected with conventional methods. However, computer algorithms can predict the locations of these garbage piles based on information about ocean currents. 
+Benefit5
+In large urban cities, computers can be used to examine the usage of energy and release of emissions, then use these data to optimize the energy generation and allocation for the city
+Problem1:
+However, computers also come with several significant downsides. One of them is over usage. As people become increasingly reliant on computers, they start spending too much time with them without taking the needed breaks. Sitting in front of a computer for too long can strain and cause damage to the back, the shoulders, and the neck. While staring at any screen for too long can cause eye strain and reduce eyesight and even cause headaches. Using computers right before going to bed can also prevent proper sleep as the brain is too stimulated to rest.
+Problem2:
+Computers have negative mental effects as well. Negative feelings such as self-doubt can be created by toxic online interactions or deceiving social media posts. These feelings can make someone suffer anxiety and even depression. These problems may become chronic and eventually even physically affect the body. 
+Problem3:
+Computers also cause problems to the environment. As computers get frequently updated, they are often thrown away and become e-waste that is difficult to recycle. These e-wastes are often toxic, but they are thrown into landfills regardless without processing and harm the plant and wildlife living close to the landfills. This not only applies to computers but accessories to these computers such as iPhone charging cables. 
+Problem4:
+Computers are also starting to consume more and more energy. The data center industry consumed around 400 terawatt-hours of energy in 2019 alone. Since many parts of the world still use fossil fuels to generate electricity, the energy that is consumed by these computers would’ve likely come from sources that emit large amounts of greenhouse gasses and pollution. 
+Solution1:
+Luckily, there are already both implemented and proposed solutions to these problems. For the effects of computers on your health, there’s no better solution than personal effort. There are many guides on proper procedures and recommended intervals to take breaks. For parents, it can be helpful to set time limits on their child’s devices so they don’t overuse their eyes. By following these guides, you can greatly reduce the damage computers cause to your body. As a community, we can also push for more regulations on social media platforms, for example, Twitter has released a feature during covid where it will label posts with misinformation. With stricter rules on aspects such as false advertising and hateful speech, the negative mental effects of social media can be addressed as well.
+Solution2:
+For the environment, reusing is one of the most effective ways to reduce harm. Instead of throwing out broken electronics, attempting to repair or partially repurpose them for another use can drastically help reduce waste. Unfortunately, this is not always possible for devices such as smartphones or wireless earbuds. In these cases, the best solution is to properly recycle them. In Ottawa, Staples offer recycling programs that take care of used electronics and dispose of them responsibly. 
+Solution3:
+It’s also important to support and advocate for more responsible manufacturing for electronics producers. The right-to-repair movement - an attempt to push for products to be more consumer-friendly and repairable, has gained momentum in the past few years and has attracted the attention of the public and policymakers. Recently, the European Union has announced it will demand all electronic manufacturers to use USB type C ports for charging and data. This benefits consumers and reduces e-waste. 
+
+
+
+
+
+
+
