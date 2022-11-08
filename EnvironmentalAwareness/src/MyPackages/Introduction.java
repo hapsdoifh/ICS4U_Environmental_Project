@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package MyPackages;
+import java.io.*;
+import java.util.*;
 
 /**
  *
@@ -13,9 +15,32 @@ public class Introduction extends javax.swing.JFrame {
     /**
      * Creates new form Benefits
      */
+    public Scanner textInfo = null;
+    public ArrayList<String> Information = new ArrayList<String>();
+    public int indexTrack = 0; 
+    
     public Introduction() {
         initComponents();
+        InitFiles();
+        jTextArea1.setText(Information.get(0));
     }
+    
+    public void InitFiles(){
+        File fileIn = new File("src\\MyPackages\\TextFile\\Information.txt");
+        try{
+            textInfo = new Scanner(fileIn);        
+        }catch(Exception e){
+            System.out.println("Error Reading File");
+        }
+        while(textInfo.hasNext()){
+            if(textInfo.nextLine().contains("Intro")){
+                Information.add(textInfo.nextLine());
+            }else{
+                textInfo.nextLine();
+            }
+        }
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -53,30 +78,42 @@ public class Introduction extends javax.swing.JFrame {
         });
 
         BackButton.setText("Back");
+        BackButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BackButtonMouseClicked(evt);
+            }
+        });
 
         NextButton.setText("Next");
+        NextButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                NextButtonMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1)
+                        .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(ReturnButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
                         .addComponent(BackButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(NextButton)))
-                .addGap(12, 12, 12))
+                        .addComponent(NextButton)
+                        .addGap(12, 12, 12))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ReturnButton)
                     .addComponent(BackButton)
@@ -106,8 +143,47 @@ public class Introduction extends javax.swing.JFrame {
 
     private void ReturnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturnButtonActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
     }//GEN-LAST:event_ReturnButtonActionPerformed
 
+    private void UpdateButtons(){
+        if(indexTrack<Information.size()){
+            jTextArea1.setText(Information.get(indexTrack));
+            if(indexTrack+1<Information.size()){
+                NextButton.setEnabled(true);
+            }else{                
+                NextButton.setEnabled(false);
+            }
+        } 
+        else{
+            indexTrack--;
+        }
+        if(indexTrack>=0){
+            jTextArea1.setText(Information.get(indexTrack));
+            if(indexTrack-1 >= 0){
+                BackButton.setEnabled(true);
+            }else{                
+                BackButton.setEnabled(false);
+            }
+        }
+        else{
+            indexTrack++;
+        }
+    }
+    
+    private void NextButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NextButtonMouseClicked
+        // TODO add your handling code here:
+        indexTrack++;
+        UpdateButtons();
+    }//GEN-LAST:event_NextButtonMouseClicked
+
+    private void BackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseClicked
+        // TODO add your handling code here:
+        indexTrack--;
+        UpdateButtons();
+    }//GEN-LAST:event_BackButtonMouseClicked
+
+    
     /**
      * @param args the command line arguments
      */

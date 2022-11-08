@@ -10,7 +10,7 @@ Benefit3:
 Computers, when combined with other technologies such as robotics, can help humans avoid dangerous situations. For example, the robot dog from Boston Dynamic can navigate dangerous places and can identify hazardous materials by itself. 
 Benefit4:
 Computers can also help protect the environment in some ways. For example, they can be used to calculate and predict the locations of plastic piles in the ocean. Most of the plastic floating in the ocean exists below the surface and cannot be detected with conventional methods. However, computer algorithms can predict the locations of these garbage piles based on information about ocean currents. 
-Benefit5
+Benefit5:
 In large urban cities, computers can be used to examine the usage of energy and release of emissions, then use these data to optimize the energy generation and allocation for the city
 Problem1:
 However, computers also come with several significant downsides. One of them is over usage. As people become increasingly reliant on computers, they start spending too much time with them without taking the needed breaks. Sitting in front of a computer for too long can strain and cause damage to the back, the shoulders, and the neck. While staring at any screen for too long can cause eye strain and reduce eyesight and even cause headaches. Using computers right before going to bed can also prevent proper sleep as the brain is too stimulated to rest.
