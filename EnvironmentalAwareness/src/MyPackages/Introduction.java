@@ -60,11 +60,11 @@ public class Introduction extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Introduction"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Benefit of Computers"));
 
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 12)); // NOI18N
+        jTextArea1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
         jTextArea1.setWrapStyleWord(true);
@@ -103,7 +103,7 @@ public class Introduction extends javax.swing.JFrame {
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(ReturnButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
                         .addComponent(BackButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(NextButton)
@@ -112,8 +112,8 @@ public class Introduction extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ReturnButton)
                     .addComponent(BackButton)
@@ -146,41 +146,40 @@ public class Introduction extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_ReturnButtonActionPerformed
 
-    private void UpdateButtons(){
-        if(indexTrack<Information.size()){
-            jTextArea1.setText(Information.get(indexTrack));
-            if(indexTrack+1<Information.size()){
-                NextButton.setEnabled(true);
+    public static int UpdateButtons(int Index,int length,javax.swing.JButton NButton,javax.swing.JButton BButton){
+        if(Index<length){
+            if(Index+1<length){
+                NButton.setEnabled(true);
             }else{                
-                NextButton.setEnabled(false);
+                NButton.setEnabled(false);
             }
         } 
         else{
-            indexTrack--;
+            Index--;
         }
-        if(indexTrack>=0){
-            jTextArea1.setText(Information.get(indexTrack));
-            if(indexTrack-1 >= 0){
-                BackButton.setEnabled(true);
+        if(Index>=0){
+            if(Index-1 >= 0){
+                BButton.setEnabled(true);
             }else{                
-                BackButton.setEnabled(false);
+                BButton.setEnabled(false);
             }
         }
         else{
-            indexTrack++;
+            Index++;
         }
+        return Index;
     }
     
     private void NextButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NextButtonMouseClicked
         // TODO add your handling code here:
-        indexTrack++;
-        UpdateButtons();
+        indexTrack = UpdateButtons(indexTrack+1,Information.size(),NextButton,BackButton);
+        jTextArea1.setText(Information.get(indexTrack));
     }//GEN-LAST:event_NextButtonMouseClicked
 
     private void BackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseClicked
         // TODO add your handling code here:
-        indexTrack--;
-        UpdateButtons();
+        indexTrack = UpdateButtons(indexTrack-1,Information.size(),NextButton,BackButton);
+        jTextArea1.setText(Information.get(indexTrack));
     }//GEN-LAST:event_BackButtonMouseClicked
 
     
