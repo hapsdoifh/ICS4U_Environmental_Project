@@ -4,6 +4,13 @@ a. It reduces electronic prices
 b. It reduces e-waste
 c. It generates revenue for big tech companies
 
+4|b|b4
+Computer algorithms are used to track garbage in the ocean because:
+a. Why not
+b. Conventional methods like boat or planes are expensive and time consuming
+c. Workers don't want to touch the garbage themselves
+d. They want to verify with another method
+
 2|b|p4
 The majority of the world uses renewable energy:
 a. True 
@@ -21,12 +28,31 @@ b. 40 tons
 c. 4 billion tons
 d. 40 million tons
 
+3|a|b3
+Spot is a:
+a. Robot for potenially dangerous industrial and civil work
+b. Cybersecurity Algorithm
+c. Educational Robot Toy
+
+3|b|p1
+The number of myopic young adults in the US in the last 50 years have:
+a. Halved 
+b. Doubled  
+c. Stayed the same
+
 4|c|s4
 Which one of the following stores does not accept old electronics in Ottawa?
 a. Roger
 b. Canada Computers
 c. Winners
 d. Staples
+
+3|a|s7
+What is the port Standardized by the EU?
+a. USB type C
+b. USB Micro B
+c. USB Type A
+
 
 
 

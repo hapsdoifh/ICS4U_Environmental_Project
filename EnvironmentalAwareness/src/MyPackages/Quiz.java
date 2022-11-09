@@ -184,6 +184,11 @@ public class Quiz extends javax.swing.JFrame {
         });
 
         ReturnButton.setText("Return to Menu");
+        ReturnButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ReturnButtonMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -207,7 +212,7 @@ public class Quiz extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton4))
                             .addComponent(jLabel3))
-                        .addGap(0, 190, Short.MAX_VALUE))
+                        .addGap(0, 218, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(ReturnButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -251,7 +256,9 @@ public class Quiz extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 13, Short.MAX_VALUE))
         );
 
         pack();
@@ -282,6 +289,7 @@ public class Quiz extends javax.swing.JFrame {
         indexTrack = Introduction.UpdateButtons(indexTrack+1,QuizText.size(),NextButton,BackButton);
         jTextArea1.setText(QuizText.get(indexTrack));
         jTextArea1.setPreferredSize(null);
+        jTextArea2.setText("");
         matchButtons();
     }//GEN-LAST:event_NextButtonMouseClicked
 
@@ -290,8 +298,14 @@ public class Quiz extends javax.swing.JFrame {
         indexTrack = Introduction.UpdateButtons(indexTrack-1,QuizText.size(),NextButton,BackButton);
         jTextArea1.setText(QuizText.get(indexTrack));
         jTextArea1.setPreferredSize(null);
+        jTextArea2.setText("");
         matchButtons();
     }//GEN-LAST:event_BackButtonMouseClicked
+
+    private void ReturnButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ReturnButtonMouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_ReturnButtonMouseClicked
 
     
     /**
