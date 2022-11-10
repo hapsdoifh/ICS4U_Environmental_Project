@@ -4,9 +4,11 @@
  */
 package MyPackages;
 
+import java.awt.Dimension;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -25,9 +27,20 @@ public class Problems extends javax.swing.JFrame {
     public Problems() {
         initComponents();
         InitFiles();
+        updateImage();          
         jTextArea1.setText(Information.get(0));
     }
 
+     
+    private void updateImage(){        
+        ImageIcon tempIcon = new ImageIcon("src\\MyPackages\\Pictures\\p"+indexTrack+".png");
+        jTextArea1.setPreferredSize(null);
+        jPanel2.setPreferredSize(new Dimension(tempIcon.getIconWidth(),tempIcon.getIconHeight()));
+        jLabel1.setIcon(tempIcon);       
+        //this.setPreferredSize(new Dimension(tempIcon.getIconWidth()+jTextArea1.getWidth(),this.getHeight()));
+        this.setSize(new Dimension(tempIcon.getIconWidth()+jTextArea1.getWidth()+100,this.getHeight()));
+    }
+    
     public void InitFiles(){
         File fileIn = new File("src\\MyPackages\\TextFile\\Information.txt");
         try{
@@ -119,19 +132,17 @@ public class Problems extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 522, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(ReturnButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 546, Short.MAX_VALUE)
+                        .addGap(253, 253, 253)
                         .addComponent(BackButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(NextButton)
-                        .addGap(12, 12, 12))))
+                        .addComponent(NextButton))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 522, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -177,6 +188,7 @@ public class Problems extends javax.swing.JFrame {
         indexTrack = Introduction.UpdateButtons(indexTrack-1,Information.size(),NextButton,BackButton);
         jTextArea1.setText(Information.get(indexTrack));
         jTextArea1.setPreferredSize(null);
+        updateImage();        
     }//GEN-LAST:event_BackButtonMouseClicked
 
     private void NextButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NextButtonMouseClicked
@@ -184,6 +196,7 @@ public class Problems extends javax.swing.JFrame {
         indexTrack = Introduction.UpdateButtons(indexTrack+1,Information.size(),NextButton,BackButton);
         jTextArea1.setText(Information.get(indexTrack));
         jTextArea1.setPreferredSize(null);
+        updateImage();      
     }//GEN-LAST:event_NextButtonMouseClicked
 
     /**

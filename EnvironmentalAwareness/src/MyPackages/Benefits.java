@@ -27,11 +27,8 @@ public class Benefits extends javax.swing.JFrame {
     public Benefits() {
         initComponents();
         InitFiles();
+        updateImage();
         jTextArea1.setText(Information.get(0));
-        ImageIcon tempIcon = new ImageIcon("src\\MyPackages\\Pictures\\b1.png");
-        jPanel2.setPreferredSize(new Dimension(tempIcon.getIconWidth(),tempIcon.getIconHeight()));
-        //jLabel1.setPreferredSize(new Dimension(tempIcon.getIconWidth(),tempIcon.getIconHeight()));
-        jLabel1.setIcon(tempIcon);
     }
        
     public void InitFiles(){
@@ -48,6 +45,15 @@ public class Benefits extends javax.swing.JFrame {
                 textInfo.nextLine();
             }
         }
+    }
+    
+    private void updateImage(){        
+        ImageIcon tempIcon = new ImageIcon("src\\MyPackages\\Pictures\\b"+indexTrack+".png");
+        jTextArea1.setPreferredSize(null);
+        jPanel2.setPreferredSize(new Dimension(tempIcon.getIconWidth(),tempIcon.getIconHeight()));
+        jLabel1.setIcon(tempIcon);    
+        this.setPreferredSize(new Dimension(tempIcon.getIconWidth()+jTextArea1.getWidth(),this.getHeight()));
+        this.setSize(new Dimension(tempIcon.getIconWidth()+jTextArea1.getWidth()+100,this.getHeight()));
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -143,11 +149,11 @@ public class Benefits extends javax.swing.JFrame {
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ReturnButton)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(BackButton)
-                        .addComponent(NextButton)))
+                        .addComponent(NextButton))
+                    .addComponent(ReturnButton))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -179,14 +185,14 @@ public class Benefits extends javax.swing.JFrame {
         // TODO add your handling code here:
         indexTrack = Introduction.UpdateButtons(indexTrack-1,Information.size(),NextButton,BackButton);
         jTextArea1.setText(Information.get(indexTrack));
-        jTextArea1.setPreferredSize(null);
+        updateImage();
     }//GEN-LAST:event_BackButtonMouseClicked
 
     private void NextButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NextButtonMouseClicked
         // TODO add your handling code here:
         indexTrack = Introduction.UpdateButtons(indexTrack+1,Information.size(),NextButton,BackButton);
         jTextArea1.setText(Information.get(indexTrack));
-        jTextArea1.setPreferredSize(null);
+        updateImage();
     }//GEN-LAST:event_NextButtonMouseClicked
 
     /**

@@ -3,8 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package MyPackages;
+import java.awt.Dimension;
 import java.io.*;
 import java.util.*;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -22,6 +24,7 @@ public class Introduction extends javax.swing.JFrame {
     public Introduction() {
         initComponents();
         InitFiles();
+        updateImage();
         jTextArea1.setText(Information.get(0));
     }
     
@@ -41,6 +44,13 @@ public class Introduction extends javax.swing.JFrame {
         }
     }
     
+    private void updateImage(){        
+        ImageIcon tempIcon = new ImageIcon("src\\MyPackages\\Pictures\\i"+indexTrack+".png");        
+        jTextArea1.setPreferredSize(null);
+        jPanel2.setPreferredSize(new Dimension(tempIcon.getIconWidth(),tempIcon.getIconHeight()));
+        jLabel1.setIcon(tempIcon);       
+        this.setSize(new Dimension(tempIcon.getIconWidth()+jTextArea1.getWidth()+80,this.getHeight()));
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -190,12 +200,14 @@ public class Introduction extends javax.swing.JFrame {
         // TODO add your handling code here:
         indexTrack = UpdateButtons(indexTrack+1,Information.size(),NextButton,BackButton);
         jTextArea1.setText(Information.get(indexTrack));
+        updateImage();
     }//GEN-LAST:event_NextButtonMouseClicked
 
     private void BackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseClicked
         // TODO add your handling code here:
         indexTrack = UpdateButtons(indexTrack-1,Information.size(),NextButton,BackButton);
         jTextArea1.setText(Information.get(indexTrack));
+        updateImage();    
     }//GEN-LAST:event_BackButtonMouseClicked
 
     

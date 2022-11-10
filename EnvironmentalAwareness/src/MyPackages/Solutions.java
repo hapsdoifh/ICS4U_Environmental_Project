@@ -4,6 +4,7 @@
  */
 package MyPackages;
 
+import java.awt.Dimension;
 import java.io.*;
 import java.util.*;
 import javax.imageio.*;
@@ -25,8 +26,18 @@ public class Solutions extends javax.swing.JFrame {
     public Solutions() {
         initComponents();
         InitFiles();
-        jTextArea1.setText(Information.get(0));
-        jLabel1.setIcon(new ImageIcon("src\\MyPackages\\Pictures\\p1.png"));
+        updateImage();       
+        jTextArea1.setText(Information.get(0)); 
+    }
+    
+    
+    private void updateImage(){        
+        ImageIcon tempIcon = new ImageIcon("src\\MyPackages\\Pictures\\s"+indexTrack+".png");        
+        jTextArea1.setPreferredSize(null);
+        jPanel2.setPreferredSize(new Dimension(tempIcon.getIconWidth(),tempIcon.getIconHeight()));
+        jLabel1.setIcon(tempIcon);       
+        this.setPreferredSize(new Dimension(tempIcon.getIconWidth()+jTextArea1.getWidth(),this.getHeight()));
+        this.setSize(new Dimension(tempIcon.getIconWidth()+jTextArea1.getWidth()+100,this.getHeight()));
     }
     
     public void InitFiles(){
@@ -177,6 +188,7 @@ public class Solutions extends javax.swing.JFrame {
         indexTrack = Introduction.UpdateButtons(indexTrack-1,Information.size(),NextButton,BackButton);
         jTextArea1.setText(Information.get(indexTrack));
         jTextArea1.setPreferredSize(null);
+        updateImage();                                  
     }//GEN-LAST:event_BackButtonMouseClicked
 
     private void NextButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NextButtonMouseClicked
@@ -184,6 +196,7 @@ public class Solutions extends javax.swing.JFrame {
         indexTrack = Introduction.UpdateButtons(indexTrack+1,Information.size(),NextButton,BackButton);
         jTextArea1.setText(Information.get(indexTrack));
         jTextArea1.setPreferredSize(null);
+        updateImage();
     }//GEN-LAST:event_NextButtonMouseClicked
 
     /**
